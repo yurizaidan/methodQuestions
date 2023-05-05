@@ -78,4 +78,5 @@ public class mathMethods {
 		double sphere_SurfaceArea = 0; 
 		sphere_SurfaceArea = 4*Math.PI*Math.pow(s_Ratio,2);
 		return sphere_SurfaceArea;
+	}
 }
