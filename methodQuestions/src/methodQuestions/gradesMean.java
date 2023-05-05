@@ -27,3 +27,4 @@ public class gradesMean {
 		return (grade_Sum/student_Number);
 	}
 }
+
