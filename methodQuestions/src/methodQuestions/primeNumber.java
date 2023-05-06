@@ -17,7 +17,7 @@ public class primeNumber {
 		number_PosInt = keyboard.nextInt();
 		number_Validation = Integer.signum(number_PosInt);
 		while (number_Validation==-1) {
-			System.out.println(" You didn't a valid number. Please enter a positive integer value: ");
+			System.out.println(" You didn't enter a valid number. Please enter a positive integer value: ");
 			number_PosInt = keyboard.nextInt();
 			number_Validation = Integer.signum(number_PosInt);
 			}
