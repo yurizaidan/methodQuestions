@@ -43,6 +43,9 @@ public class E2_arthur_tarouco_yuri_zaidan {
 	public static double PrimeNumberMean (int numberA, int numberB) {
 		int primenumbersum=0;
 		int primenumberamount=0;
+		if (numberA==0) {
+			numberA++;
+		}
 		for (int currentnumber=numberA; currentnumber<=numberB;currentnumber++) {
 			int sum=0;
 			for (int count=2;count<=currentnumber;count++) {
