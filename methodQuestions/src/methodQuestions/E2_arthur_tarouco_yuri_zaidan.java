@@ -7,9 +7,14 @@ public class E2_arthur_tarouco_yuri_zaidan {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int numberA, numberB;
+		int numberA, numberB, numberAux;
 		numberA=readPositiveInt();
 		numberB=readPositiveInt();
+		if (numberA>numberB) {
+			numberAux=numberB;
+			numberB=numberA;
+			numberA=numberAux;
+		}
 		System.out.println("Sum of odd numbers is: "+OddNumberSum(numberA, numberB));
 		System.out.println("Amount of even numbers is: "+EvenNumberAmount(numberA, numberB));
 		System.out.println("Mean of prime number is: "+PrimeNumberMean(numberA, numberB));
@@ -17,9 +22,9 @@ public class E2_arthur_tarouco_yuri_zaidan {
 
 	public static int OddNumberSum (int numberA, int numberB) {
 		int oddnumbersum=0;
-		for (int count=numberA; count<=numberB;count++) {
-			if (count%2!=0) {
-			oddnumbersum=oddnumbersum+count;
+		for (int currentnumber=numberA; currentnumber<=numberB;currentnumber++) {
+			if (currentnumber%2!=0) {
+			oddnumbersum=oddnumbersum+currentnumber;
 			}
 		}
 		return oddnumbersum;
@@ -27,27 +32,31 @@ public class E2_arthur_tarouco_yuri_zaidan {
 	
 	public static int EvenNumberAmount (int numberA, int numberB) {
 		int evennumbersum=0;
-		for (int count=numberA; count<=numberB;count++) {
-			if (count%2==0) {
+		for (int currentnumber=numberA; currentnumber<=numberB;currentnumber++) {
+			if (currentnumber%2==0) {
 				evennumbersum++;
 			}
 		}
 		return evennumbersum;
 	}
 	
-	public static int PrimeNumberMean (int numberA, int numberB) {
+	public static double PrimeNumberMean (int numberA, int numberB) {
 		int primenumbersum=0;
 		int primenumberamount=0;
-		for (int count=numberA; count<=numberB;count++) {
-			for (int count2=2;count2<=count;count2++) {
-				if (count%count2==0) {
-					primenumbersum=primenumbersum+count2;
+		for (int currentnumber=numberA; currentnumber<=numberB;currentnumber++) {
+			int sum=0;
+			for (int count=2;count<=currentnumber;count++) {
+				if (currentnumber%count==0) {
+					sum=sum+currentnumber;
 				}
-			if (primenumbersum==count)
+			}
+			if (sum==currentnumber) {
+			primenumbersum=primenumbersum+currentnumber;
 			primenumberamount++;
 			}
 		}
-		return (primenumbersum/primenumberamount);
+		return (double)primenumbersum/primenumberamount;
+
 	}
 	
 	public static int readPositiveInt() {
